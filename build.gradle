@@ -1,3 +1,7 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.f2prateek.javafmt'
+apply plugin: 'maven-publish'
+
 buildscript {
   repositories {
     mavenCentral()
@@ -15,9 +19,6 @@ buildscript {
 // Use -Prelease or $ORG_GRADLE_PROJECT_RELEASE="true" to mark the project as a release
 ext.isRelease = hasProperty('release')
 
-apply plugin: 'com.android.library'
-apply plugin: 'com.f2prateek.javafmt'
-apply plugin: 'maven'
 group = 'com.github.LeoHub-dev'
 
 android {
@@ -25,7 +26,7 @@ android {
   buildToolsVersion '28.0.3'
 
   defaultConfig {
-    minSdkVersion 14
+    minSdkVersion 23
     targetSdkVersion 28
   }
 
@@ -54,6 +55,7 @@ dependencies {
     mavenCentral()
     jcenter()
     google()
+    maven { url "https://jitpack.io"  }
   }
 
   api 'com.segment.analytics.android:analytics:4.10.4'
