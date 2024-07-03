@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+// Apply Google services plugin
+apply plugin: 'com.google.gms.google-services'
 
 buildscript {
   repositories {
