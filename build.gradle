@@ -20,6 +20,7 @@ buildscript {
 ext.isRelease = hasProperty('release')
 
 group = 'com.github.LeoHub-dev'
+version = '1.0'
 
 android {
   compileSdkVersion 33
