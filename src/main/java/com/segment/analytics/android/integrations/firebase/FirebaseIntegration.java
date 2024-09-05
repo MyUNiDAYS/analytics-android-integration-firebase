@@ -192,6 +192,13 @@ public class FirebaseIntegration extends Integration<FirebaseAnalytics> {
   public void screen(ScreenPayload screen) {
     super.screen(screen);
 
+    Bundle propertiesBundle = new Bundle();
+    for (Map.Entry<String, Object> entry : screen.entrySet()) {
+      propertiesBundle.putString(entry.getKey(), entry.getValue().toString());
+    }
+    propertiesBundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, screen.name());
+    firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, propertiesBundle);
+
     if (this.currentActivity != null) {
       firebaseAnalytics.setCurrentScreen(this.currentActivity, screen.name(), null);
     }

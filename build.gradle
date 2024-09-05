@@ -16,8 +16,8 @@ buildscript {
 // Use -Prelease or $ORG_GRADLE_PROJECT_RELEASE="true" to mark the project as a release
 ext.isRelease = true
 
-group = 'com.github.LeoHub-dev'
-version = '1.0'
+group = 'com.segment.analytics.android.integrations'
+version = '2.3.3-unidays'
 
 android {
   compileSdkVersion 32
