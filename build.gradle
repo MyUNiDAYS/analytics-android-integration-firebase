@@ -17,7 +17,7 @@ buildscript {
 ext.isRelease = true
 
 group = 'com.segment.analytics.android.integrations'
-version = '2.3.3-unidays'
+version = '2.3.4'
 
 android {
   compileSdkVersion 32

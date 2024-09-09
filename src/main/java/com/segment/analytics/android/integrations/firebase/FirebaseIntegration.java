@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.analytics.FirebaseAnalytics.Event;
 import com.google.firebase.analytics.FirebaseAnalytics.Param;
@@ -18,12 +17,10 @@ import com.segment.analytics.integrations.Integration;
 import com.segment.analytics.integrations.Logger;
 import com.segment.analytics.integrations.TrackPayload;
 import com.segment.analytics.integrations.ScreenPayload;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import static com.segment.analytics.internal.Utils.hasPermission;
 import static com.segment.analytics.internal.Utils.isNullOrEmpty;
 
@@ -198,11 +195,6 @@ public class FirebaseIntegration extends Integration<FirebaseAnalytics> {
     }
     propertiesBundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, screen.name());
     firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, propertiesBundle);
-
-    if (this.currentActivity != null) {
-      firebaseAnalytics.setCurrentScreen(this.currentActivity, screen.name(), null);
-    }
-
     logger.verbose("firebaseAnalytics.screen(activity, %s, null);", screen.name());
   }
 
