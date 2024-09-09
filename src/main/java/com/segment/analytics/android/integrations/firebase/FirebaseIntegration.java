@@ -202,6 +202,8 @@ public class FirebaseIntegration extends Integration<FirebaseAnalytics> {
     if (this.currentActivity != null) {
       firebaseAnalytics.setCurrentScreen(this.currentActivity, screen.name(), null);
     }
+
+    logger.verbose("firebaseAnalytics.screen(activity, %s, null);", screen.name());
   }
 
   private static Bundle formatProperties(Properties properties) {
